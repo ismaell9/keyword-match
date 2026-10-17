@@ -33,7 +33,7 @@ Concrete, defensible skills, mapped to the code:
 | LLM orchestration, grounding, citations | `generation.py`; citation validity = 1.000 measured |
 | Knowing when *not* to answer | two-layer abstention in `retrieval.py` + `generation.py`; threshold sweep in the eval report |
 | Evaluation discipline | `metrics.py` (pure), `evaluation.py`; per-stage, per-cut-off, stub-integrity flags |
-| Production-shaped Python service | FastAPI app, env-driven config, incremental ingestion, Docker, one-file storage, a real test suite |
+| Production-shaped Python service | FastAPI app, env-driven config, incremental ingestion, one-file storage, a real test suite (Docker config included but not yet built — no daemon here) |
 | Honest engineering | the Limitations sections in `README.md` and `docs/evaluation.md` |
 
 ## Suggested talking points for interviews
@@ -110,7 +110,16 @@ Have a real answer — this is usually where the interesting conversation is:
 > Authored an evaluation harness reporting recall@k / nDCG / MRR per stage and
 > cut-off, citation validity, and abstention accuracy on labelled unanswerable
 > questions; all reported numbers are measured, with stub components refusing to
-> produce quality metrics. 148 passing tests; Dockerized; single-file index.
+> produce quality metrics. 148 passing tests; single-file SQLite index; Dockerfile
+> included (image build not yet run — no Docker daemon on the build machine).
+
+> **On the word "Dockerised":** do not write it until an image has actually been
+> built. This machine has no Docker daemon, so the `Dockerfile` and
+> `docker-compose.yml` are provided and pattern-correct but unverified —
+> `docs/SETUP-NOTES.md` records that explicitly. Either build the image (on a
+> machine with Docker, or via CI) and then claim it, or phrase it as
+> "Dockerfile provided". Claiming a container that has never built is exactly the
+> kind of thing that collapses under one follow-up question.
 
 Keep the "all reported numbers are measured" phrase — it's the differentiator, and
 it's true.

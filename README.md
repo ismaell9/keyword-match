@@ -139,6 +139,12 @@ docker compose run --rm cli eval
 To use an existing LLM endpoint instead, drop the `ollama` service and point
 `OPENAI_BASE_URL` at it.
 
+> **⚠️ Not yet verified.** The machine these files were written on has no Docker
+> daemon, so the `Dockerfile` and `docker-compose.yml` have never been built or run.
+> They follow standard patterns but are **untested** — see `docs/SETUP-NOTES.md`.
+> Verify on a machine with Docker (or via CI) before relying on these commands or
+> claiming the project is containerised.
+
 ## Results
 
 Measured on this machine with the real stack — fastembed
