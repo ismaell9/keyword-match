@@ -1,0 +1,102 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R] /Count 3 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 7 0 R >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 8 0 R >>
+endobj
+6 0 obj
+<< /Length 658 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+1 0 0 1 72 720 Tm
+(Vendor Risk Summary) Tj T*
+() Tj T*
+(This document summarises the risk assessment for third-party) Tj T*
+(processors used by the Platform Engineering group. It is reviewed) Tj T*
+(each quarter by the Security Office and the Data Protection Officer.) Tj T*
+() Tj T*
+(Tiering) Tj T*
+(Vendors are placed in one of three tiers. Tier 1 vendors process) Tj T*
+(Restricted data and require an annual on-site assessment. Tier 2) Tj T*
+(vendors process Internal data and require a security questionnaire) Tj T*
+(every two years. Tier 3 vendors receive no company data and require) Tj T*
+(only a signed terms of service.) Tj T*
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 693 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+1 0 0 1 72 720 Tm
+(Assessment findings) Tj T*
+() Tj T*
+(The primary cloud hosting vendor is Tier 1 and holds a current) Tj T*
+(independent audit report. No critical findings are open.) Tj T*
+() Tj T*
+(The analytics vendor is Tier 2. Its questionnaire from the previous) Tj T*
+(cycle lapsed in March, so a renewal is outstanding. Until the) Tj T*
+(questionnaire is renewed, no new data may be shared with that vendor.) Tj T*
+() Tj T*
+(Continuous monitoring) Tj T*
+(Security ratings for all Tier 1 and Tier 2 vendors are monitored) Tj T*
+(monthly. A drop in rating below the acceptable threshold opens an) Tj T*
+(automatic review ticket assigned to the vendor owner.) Tj T*
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 544 >>
+stream
+BT
+/F1 11 Tf
+14 TL
+1 0 0 1 72 720 Tm
+(Escalation and remediation) Tj T*
+() Tj T*
+(A vendor with an open critical finding must produce a remediation) Tj T*
+(plan within 10 business days. If the plan is rejected, the vendor is) Tj T*
+(suspended: existing integrations are switched to read-only and new) Tj T*
+(data flows are blocked.) Tj T*
+() Tj T*
+(Termination of a vendor relationship requires confirmation that all) Tj T*
+(company data has been deleted or returned, evidenced in writing, and) Tj T*
+(recorded in the vendor register.) Tj T*
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000133 00000 n 
+0000000259 00000 n 
+0000000385 00000 n 
+0000000511 00000 n 
+0000001220 00000 n 
+0000001964 00000 n 
+0000002559 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+2629
+%%EOF

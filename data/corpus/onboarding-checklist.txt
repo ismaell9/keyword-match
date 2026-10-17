@@ -1,0 +1,43 @@
+New Engineer Onboarding Checklist
+=================================
+
+Day 1
+-----
+1. Collect the laptop and hardware token from IT.
+2. Enrol in multi-factor authentication before any other account.
+3. Join the team channel and introduce yourself.
+4. Read the IT Security Policy and the Deployment Runbook. Both are required
+   reading and there is a short quiz at the end of week one.
+
+Week 1
+------
+5. Get read access to production logs. Write access requires a separate approval
+   from the system owner and is not granted during onboarding.
+6. Set up the local development environment using the bootstrap script in the
+   platform repository. Do not install tooling globally; use the provided
+   container or a virtual environment.
+7. Ship a "hello world" change through the full pipeline to dev. The goal is to
+   learn the deployment path, not to deliver value.
+8. Book introductory chats with the data protection officer and the on-call
+   engineer.
+
+Week 2
+------
+9. Pick up your first small ticket. Pair with a teammate for the first pull
+   request so you learn the review conventions.
+10. Complete the security quiz. You may not receive production access until it
+    is passed.
+11. Add yourself to the on-call shadow rotation. New engineers shadow for two
+    rotations before taking primary on-call.
+
+First 90 days
+-------------
+12. Own a service component end to end, including its runbook and SLO dashboard.
+13. Write one post-incident review as the author, with a mentor reviewing.
+14. Propose one improvement to the onboarding process itself.
+
+Useful contacts
+---------------
+- IT service desk: raises hardware and account issues.
+- Security Office: approves exceptions to the security policy.
+- Data Protection Officer: approves any movement of Restricted data.

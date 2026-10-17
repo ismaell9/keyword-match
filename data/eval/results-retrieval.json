@@ -1,0 +1,2382 @@
+{
+  "generated_at": "2026-10-17T09:53:34+00:00",
+  "quality_metrics_valid": true,
+  "warning": null,
+  "environment": {
+    "embeddings": {
+      "backend": "BAAI/bge-small-en-v1.5",
+      "dim": 384,
+      "is_stub": false
+    },
+    "vectors": {
+      "backend": "sqlite-vec",
+      "sqlite_vec_error": null
+    },
+    "reranker": {
+      "backend": "Xenova/ms-marco-MiniLM-L-6-v2",
+      "is_stub": false
+    },
+    "generation": {
+      "configured": false,
+      "client": "null"
+    },
+    "notes": [
+      "storage: /home/xom3a/Me/Projects/rag-doc-qa/data/index.sqlite3 (vector backend: sqlite-vec)",
+      "embeddings: fastembed BAAI/bge-small-en-v1.5 (dim=384)",
+      "rerank: cross-encoder Xenova/ms-marco-MiniLM-L-6-v2",
+      "generation: not loaded"
+    ],
+    "index": {
+      "documents": 6,
+      "chunks": 14,
+      "words": 2206,
+      "vectors": 14,
+      "vector_backend": "sqlite-vec",
+      "db_path": "/home/xom3a/Me/Projects/rag-doc-qa/data/index.sqlite3",
+      "db_size_bytes": 1695744,
+      "meta": {
+        "schema_version": "1",
+        "embed_model": "BAAI/bge-small-en-v1.5",
+        "embed_is_stub": "false",
+        "embed_dim": "384",
+        "chunk_size_words": "220",
+        "chunk_overlap_words": "40",
+        "vector_backend": "sqlite-vec",
+        "build_notes": "[\"storage: /home/xom3a/Me/Projects/rag-doc-qa/data/index.sqlite3 (vector backend: sqlite-vec)\", \"embeddings: fastembed BAAI/bge-small-en-v1.5 (dim=384)\", \"rerank: cross-encoder Xenova/ms-marco-MiniLM-L-6-v2\", \"generation: not loaded\"]",
+        "updated_at": "2026-10-17T09:51:11+00:00"
+      }
+    }
+  },
+  "retrieval": {
+    "k": 8,
+    "n_questions": 16,
+    "n_answerable": 12,
+    "n_unanswerable": 4,
+    "questions_with_no_relevant_chunk_in_index": 0,
+    "by_stage": {
+      "bm25_only": {
+        "recall@8": 1.0,
+        "precision@8": 0.1458,
+        "ndcg@8": 0.9692,
+        "mrr": 0.9583,
+        "hit@8": 1.0
+      },
+      "vector_only": {
+        "recall@8": 1.0,
+        "precision@8": 0.1458,
+        "ndcg@8": 0.8786,
+        "mrr": 0.8542,
+        "hit@8": 1.0
+      },
+      "hybrid": {
+        "recall@8": 1.0,
+        "precision@8": 0.1458,
+        "ndcg@8": 0.9692,
+        "mrr": 0.9583,
+        "hit@8": 1.0
+      },
+      "hybrid+rerank": {
+        "recall@8": 1.0,
+        "precision@8": 0.1458,
+        "ndcg@8": 0.9692,
+        "mrr": 0.9583,
+        "hit@8": 1.0
+      }
+    },
+    "by_k": {
+      "1": {
+        "bm25_only": {
+          "recall@1": 0.8333,
+          "ndcg@1": 0.9167,
+          "hit@1": 0.9167
+        },
+        "vector_only": {
+          "recall@1": 0.6667,
+          "ndcg@1": 0.75,
+          "hit@1": 0.75
+        },
+        "hybrid": {
+          "recall@1": 0.8333,
+          "ndcg@1": 0.9167,
+          "hit@1": 0.9167
+        },
+        "hybrid+rerank": {
+          "recall@1": 0.8333,
+          "ndcg@1": 0.9167,
+          "hit@1": 0.9167
+        }
+      },
+      "3": {
+        "bm25_only": {
+          "recall@3": 1.0,
+          "ndcg@3": 0.9692,
+          "hit@3": 1.0
+        },
+        "vector_only": {
+          "recall@3": 0.875,
+          "ndcg@3": 0.8229,
+          "hit@3": 0.9167
+        },
+        "hybrid": {
+          "recall@3": 1.0,
+          "ndcg@3": 0.9692,
+          "hit@3": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@3": 1.0,
+          "ndcg@3": 0.9692,
+          "hit@3": 1.0
+        }
+      },
+      "5": {
+        "bm25_only": {
+          "recall@5": 1.0,
+          "ndcg@5": 0.9692,
+          "hit@5": 1.0
+        },
+        "vector_only": {
+          "recall@5": 1.0,
+          "ndcg@5": 0.8786,
+          "hit@5": 1.0
+        },
+        "hybrid": {
+          "recall@5": 1.0,
+          "ndcg@5": 0.9692,
+          "hit@5": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@5": 1.0,
+          "ndcg@5": 0.9692,
+          "hit@5": 1.0
+        }
+      },
+      "8": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "ndcg@8": 0.9692,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "ndcg@8": 0.8786,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "ndcg@8": 0.9692,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "ndcg@8": 0.9692,
+          "hit@8": 1.0
+        }
+      }
+    },
+    "doc_recall_mean": 1.0
+  },
+  "abstention": {
+    "method": "retrieval-only evidence-confidence gate (LLM-independent)",
+    "configured": {
+      "threshold": 0.15,
+      "accuracy": 0.9375,
+      "unanswerable_correct_abstain_rate": 0.75,
+      "answerable_false_abstain_rate": 0.0,
+      "n_unanswerable": 4,
+      "n_answerable": 12
+    },
+    "sweep": [
+      {
+        "threshold": 0.0,
+        "accuracy": 0.75,
+        "unanswerable_correct_abstain_rate": 0.0,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.05,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.1,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.15,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.2,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.25,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.3,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.35,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.4,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.5,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.6,
+        "accuracy": 0.9375,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      },
+      {
+        "threshold": 0.7,
+        "accuracy": 0.875,
+        "unanswerable_correct_abstain_rate": 0.75,
+        "answerable_false_abstain_rate": 0.0833,
+        "n_unanswerable": 4,
+        "n_answerable": 12
+      }
+    ],
+    "best_by_accuracy": {
+      "threshold": 0.05,
+      "accuracy": 0.9375,
+      "unanswerable_correct_abstain_rate": 0.75,
+      "answerable_false_abstain_rate": 0.0,
+      "n_unanswerable": 4,
+      "n_answerable": 12
+    }
+  },
+  "generation": null,
+  "latency": {
+    "retrieval_ms": {
+      "p50": 502.1,
+      "p95": 566.5,
+      "mean": 510.9,
+      "n": 16
+    }
+  },
+  "per_question": [
+    {
+      "id": "q01",
+      "question": "How often must passwords be rotated?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9935,
+      "retrieval_latency_ms": 563.4,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 0.6309,
+          "mrr": 0.5,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": 5.0262,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -5.0127,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -5.9066,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -9.1521,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 8,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -9.1621,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 10,
+            "vector": 14
+          }
+        },
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": -9.5778,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 9,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": -10.0259,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 6
+          }
+        },
+        {
+          "chunk_id": 9,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 1,
+          "page": null,
+          "score": -10.0273,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "question": "Is multi-factor authentication required to log in to production consoles?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9989,
+      "retrieval_latency_ms": 496.3,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": 6.7873,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 10,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 0,
+          "page": null,
+          "score": 1.1909,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -10.5867,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 6,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 0,
+          "page": null,
+          "score": -10.7655,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 9
+          }
+        },
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": -10.9536,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 13
+          }
+        },
+        {
+          "chunk_id": 9,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 1,
+          "page": null,
+          "score": -10.97,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.0183,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 8,
+            "vector": 11
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.2361,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "How long are authentication logs retained?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9876,
+      "retrieval_latency_ms": 483.8,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 0.6309,
+          "mrr": 0.5,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 0.6309,
+          "mrr": 0.5,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 0.6309,
+          "mrr": 0.5,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 0.6309,
+          "mrr": 0.5,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": 4.3774,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 9,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 1,
+          "page": null,
+          "score": 0.3305,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -1.7516,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -1.8073,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -5.4019,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 12
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -6.5355,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 11,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -8.8622,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 13,
+            "vector": 8
+          }
+        },
+        {
+          "chunk_id": 10,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 0,
+          "page": null,
+          "score": -8.926,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 13
+          }
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "question": "What is the default rate limit for an API key?",
+      "answerable": true,
+      "n_relevant_chunks": 2,
+      "evidence_confidence": 0.998,
+      "retrieval_latency_ms": 494.3,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.25,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.25,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.25,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.25,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": 6.2103,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 1,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 0,
+          "page": null,
+          "score": 1.7033,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.2107,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -11.2912,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 12,
+            "vector": 14
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -11.3143,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 11,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.3235,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 11
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.325,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 10,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 13,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 1,
+          "page": 2,
+          "score": -11.3391,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "What is the default and maximum page size for paginated collection endpoints?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9338,
+      "retrieval_latency_ms": 499.8,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": 2.6458,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 1,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 0,
+          "page": null,
+          "score": -4.4555,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.3845,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 6
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.4033,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 11
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.4216,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 10,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.4385,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 14
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -11.4432,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 13,
+            "vector": 9
+          }
+        },
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.4495,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 14,
+            "vector": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "question": "How long is the previous deployment image kept so a rollback is possible?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9854,
+      "retrieval_latency_ms": 514.5,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 6,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 0,
+          "page": null,
+          "score": 4.2108,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": 0.2674,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -8.6137,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 11,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": -8.7618,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -10.0594,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 10,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 10,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 0,
+          "page": null,
+          "score": -10.48,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 8
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -10.6882,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 14
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -10.7071,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "question": "What is the availability service level objective?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9885,
+      "retrieval_latency_ms": 575.7,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": 4.4543,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 6,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 0,
+          "page": null,
+          "score": -9.0243,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 13,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 1,
+          "page": 2,
+          "score": -10.9541,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 12,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 0,
+          "page": 1,
+          "score": -11.047,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.1597,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 8
+          }
+        },
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.1957,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 9
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -11.2983,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 12,
+            "vector": 14
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.3345,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "What must be in place before any data is sent to a third-party processor?",
+      "answerable": true,
+      "n_relevant_chunks": 2,
+      "evidence_confidence": 0.9999,
+      "retrieval_latency_ms": 503.4,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.25,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.25,
+          "ndcg@8": 0.8503,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.25,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.25,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": 9.3635,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -0.2604,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 12,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 0,
+          "page": 1,
+          "score": -0.656,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -3.5531,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 9,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 1,
+          "page": null,
+          "score": -6.5864,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 8,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -8.5658,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 11,
+            "vector": 14
+          }
+        },
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": -9.1131,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 13,
+            "vector": 9
+          }
+        },
+        {
+          "chunk_id": 10,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 0,
+          "page": null,
+          "score": -9.7637,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "question": "What happens if a vendor rejects the remediation plan for a critical finding?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9998,
+      "retrieval_latency_ms": 496.4,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": 8.7044,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 13,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 1,
+          "page": 2,
+          "score": -5.8376,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -10.1114,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 12,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 0,
+          "page": 1,
+          "score": -10.3556,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -10.6918,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 7
+          }
+        },
+        {
+          "chunk_id": 9,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 1,
+          "page": null,
+          "score": -10.813,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 6
+          }
+        },
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": -10.8855,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 13,
+            "vector": 9
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.0951,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "question": "How quickly must the on-call engineer acknowledge a page?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.6997,
+      "retrieval_latency_ms": 487.9,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 0.4307,
+          "mrr": 0.25,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": 0.8461,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -3.4181,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 9,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 1,
+          "page": null,
+          "score": -3.8629,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": -8.0928,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -8.2789,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 12,
+            "vector": 8
+          }
+        },
+        {
+          "chunk_id": 10,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 0,
+          "page": null,
+          "score": -8.9557,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -10.1691,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 7
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -10.7045,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 9,
+            "vector": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "How long are customer transaction records retained?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9915,
+      "retrieval_latency_ms": 486.5,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": 4.7562,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -2.8778,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 9,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 1,
+          "page": null,
+          "score": -3.5802,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 6
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -4.2239,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -5.0002,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -7.4094,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 13
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -8.8081,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 12,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 12,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 0,
+          "page": 1,
+          "score": -9.8256,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 11,
+            "vector": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "How many days does the company have to answer an individual's request to see their personal data?",
+      "answerable": true,
+      "n_relevant_chunks": 1,
+      "evidence_confidence": 0.9808,
+      "retrieval_latency_ms": 541.4,
+      "stages": {
+        "bm25_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "vector_only": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        },
+        "hybrid+rerank": {
+          "recall@8": 1.0,
+          "precision@8": 0.125,
+          "ndcg@8": 1.0,
+          "mrr": 1.0,
+          "hit@8": 1.0
+        }
+      },
+      "doc_recall": 1.0,
+      "top_chunks": [
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": 3.935,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -2.6846,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 8
+          }
+        },
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": -3.8714,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 9,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 1,
+          "page": null,
+          "score": -4.3519,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 6,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -5.7235,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 6
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -6.9616,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 8,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -7.7041,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 13,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -8.8263,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 9
+          }
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "question": "What is the annual leave entitlement for engineers?",
+      "answerable": false,
+      "n_relevant_chunks": 0,
+      "evidence_confidence": 0.0001,
+      "retrieval_latency_ms": 508.7,
+      "stages": {},
+      "doc_recall": null,
+      "top_chunks": [
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -9.2685,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 12,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 0,
+          "page": 1,
+          "score": -9.6898,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 7
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -10.6572,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 10,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.0253,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.0842,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.1346,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 8,
+            "vector": 8
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.2749,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 10
+          }
+        },
+        {
+          "chunk_id": 13,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 1,
+          "page": 2,
+          "score": -11.282,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 10,
+            "vector": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "Which cloud provider hosts the primary region?",
+      "answerable": false,
+      "n_relevant_chunks": 0,
+      "evidence_confidence": 0.8782,
+      "retrieval_latency_ms": 506.2,
+      "stages": {},
+      "doc_recall": null,
+      "top_chunks": [
+        {
+          "chunk_id": 13,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 1,
+          "page": 2,
+          "score": 1.9759,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -2.7141,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 7
+          }
+        },
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.3354,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 11,
+            "vector": 6
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.3477,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 12
+          }
+        },
+        {
+          "chunk_id": 10,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.36,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 10
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.3727,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 8,
+            "vector": 9
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.3733,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 9,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.3988,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "question": "What is the sabbatical policy after five years of service?",
+      "answerable": false,
+      "n_relevant_chunks": 0,
+      "evidence_confidence": 0.0001,
+      "retrieval_latency_ms": 515.7,
+      "stages": {},
+      "doc_recall": null,
+      "top_chunks": [
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": -9.2609,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -10.1461,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 6
+          }
+        },
+        {
+          "chunk_id": 7,
+          "doc_id": "4e7f78960f47e231",
+          "ordinal": 1,
+          "page": null,
+          "score": -10.47,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -10.8226,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 12,
+            "vector": 9
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -11.0592,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 9,
+            "vector": 7
+          }
+        },
+        {
+          "chunk_id": 12,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 0,
+          "page": 1,
+          "score": -11.1582,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 14
+          }
+        },
+        {
+          "chunk_id": 11,
+          "doc_id": "66ffc961da9d8511",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.2103,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 5,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.2567,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 10,
+            "vector": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "question": "How much does the analytics vendor charge per year?",
+      "answerable": false,
+      "n_relevant_chunks": 0,
+      "evidence_confidence": 0.0208,
+      "retrieval_latency_ms": 500.8,
+      "stages": {},
+      "doc_recall": null,
+      "top_chunks": [
+        {
+          "chunk_id": 13,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 1,
+          "page": 2,
+          "score": -3.8508,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 2,
+            "vector": 1
+          }
+        },
+        {
+          "chunk_id": 12,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 0,
+          "page": 1,
+          "score": -7.9491,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 3,
+            "vector": 2
+          }
+        },
+        {
+          "chunk_id": 14,
+          "doc_id": "bee2449cfd21069f",
+          "ordinal": 2,
+          "page": 3,
+          "score": -10.8465,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 7,
+            "vector": 3
+          }
+        },
+        {
+          "chunk_id": 5,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 2,
+          "page": null,
+          "score": -10.9258,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 8,
+            "vector": 4
+          }
+        },
+        {
+          "chunk_id": 2,
+          "doc_id": "b66c595856b1a3e1",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.0917,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 4,
+            "vector": 5
+          }
+        },
+        {
+          "chunk_id": 3,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.1518,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 1,
+            "vector": 11
+          }
+        },
+        {
+          "chunk_id": 4,
+          "doc_id": "d82f0eb232d16462",
+          "ordinal": 1,
+          "page": null,
+          "score": -11.2014,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 9,
+            "vector": 13
+          }
+        },
+        {
+          "chunk_id": 8,
+          "doc_id": "889dc9b0671870f6",
+          "ordinal": 0,
+          "page": null,
+          "score": -11.2456,
+          "source": "rerank",
+          "ranks": {
+            "bm25": 12,
+            "vector": 8
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Virtualenv
+.venv/
+venv/
+
+# Test / coverage caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local secrets
+.env
+
+# Build artifacts: the SQLite index is derived data and is rebuilt by `cli.py ingest`.
+# It is NOT committed (it embeds model outputs and is machine-specific).
+data/index.sqlite3
+data/index.sqlite3-*
+
+# Ollama / model caches are external; never commit them.
+.cache/
+*.onnx
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/

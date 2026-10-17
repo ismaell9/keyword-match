@@ -1,0 +1,73 @@
+# Self-contained demo stack: the API plus an Ollama sidecar that serves the LLM.
+#
+#   docker compose up --build
+#   docker compose run --rm cli ingest          # build the index (downloads models once)
+#   docker compose run --rm cli ask "..."       # ask a question
+#   docker compose run --rm cli eval            # run the evaluation harness
+#
+# If you already have an LLM endpoint elsewhere, skip the `ollama` service and
+# set OPENAI_BASE_URL + LLM_MODEL on the `api`/`cli` services to point at it.
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      RAGQA_DB_PATH: /app/data/index.sqlite3
+      RAGQA_CORPUS_DIR: /app/data/corpus
+      OPENAI_BASE_URL: http://ollama:11434/v1
+      OPENAI_API_KEY: not-needed
+      LLM_MODEL: ${LLM_MODEL:-qwen2.5:7b-instruct}
+      # Set to "none" for thinking models (Qwen3.5) so they don't exhaust the
+      # token budget on their reasoning channel and return empty content.
+      LLM_REASONING_EFFORT: ${LLM_REASONING_EFFORT:-}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-120}
+    volumes:
+      - index-data:/app/data
+      - model-cache:/app/.cache
+    depends_on:
+      - ollama
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # One-off CLI invocations: docker compose run --rm cli ingest|ask|eval|stats
+  cli:
+    build: .
+    entrypoint: ["python", "cli.py"]
+    environment:
+      RAGQA_DB_PATH: /app/data/index.sqlite3
+      RAGQA_CORPUS_DIR: /app/data/corpus
+      OPENAI_BASE_URL: http://ollama:11434/v1
+      OPENAI_API_KEY: not-needed
+      LLM_MODEL: ${LLM_MODEL:-qwen2.5:7b-instruct}
+      LLM_REASONING_EFFORT: ${LLM_REASONING_EFFORT:-}
+      LLM_TIMEOUT_SECONDS: ${LLM_TIMEOUT_SECONDS:-120}
+    volumes:
+      - index-data:/app/data
+      - model-cache:/app/.cache
+    depends_on:
+      - ollama
+
+  ollama:
+    image: ollama/ollama:latest
+    volumes:
+      - ollama-models:/root/.ollama
+    # Uncomment to expose the Ollama API directly on the host for debugging:
+    # ports:
+    #   - "11434:11434"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 20s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  index-data:
+  model-cache:
+  ollama-models:

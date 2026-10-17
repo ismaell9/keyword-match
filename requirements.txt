@@ -1,0 +1,31 @@
+# Runtime dependencies, pinned to the versions this project was developed and
+# measured against (Python 3.14.4, Linux x86_64). See docs/SETUP-NOTES.md for the
+# environment details, including which wheels existed for Python 3.14 at build time.
+
+# --- web service -----------------------------------------------------------
+fastapi==0.143.3
+starlette==1.8.0
+uvicorn==0.54.0
+python-multipart==0.0.32
+
+# --- config / validation ---------------------------------------------------
+pydantic==2.14.1
+pydantic-settings==2.16.0
+
+# --- retrieval / storage ---------------------------------------------------
+numpy==2.5.4
+sqlite-vec==0.1.9        # vec0 virtual table; numpy fallback is used if absent
+
+# --- models ----------------------------------------------------------------
+fastembed==0.9.0         # brings onnxruntime + tokenizers; real embedder + reranker
+onnxruntime==1.31.0      # pinned: 1.31.0 is the first release with a cp314 wheel
+tokenizers==0.23.3       # abi3 wheel, works on 3.14
+
+# --- document parsing ------------------------------------------------------
+pypdf==6.21.0
+
+# --- LLM client (OpenAI-compatible HTTP) -----------------------------------
+httpx==0.28.1
+
+# --- dev / test ------------------------------------------------------------
+pytest==9.1.1
